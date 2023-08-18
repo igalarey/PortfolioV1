@@ -3,6 +3,9 @@
 
 ![Captura](https://i.imgur.com/2ixc5vk.png)
 
+## 🔴 En vivo
+
+[Pulsa aquí](https://igalarey.github.io/portfolio/)
 
 ## 📋 Descripción
 
