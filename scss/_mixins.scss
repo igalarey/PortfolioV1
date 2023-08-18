@@ -1,0 +1,40 @@
+@mixin main($position, $top, $bottom, $left) {
+    position: $position;
+    top: $top;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+@mixin p($weight, $opacity, $left, $bottom) {
+    font-weight: $weight;
+    opacity: $opacity;
+    padding-left: $left;
+    padding-bottom: $bottom;
+}
+
+@mixin flex($direction, $break, $justify, $align) {
+    display: flex;
+    flex-flow: $direction $break;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin device($punto) {
+    @if ($punto == bigscreen) {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    } @else if ($punto == laptop) {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    } @else if ($punto == tablet) {
+        @media (max-width: 950px) {
+            @content;
+        }
+    } @else if ($punto == movil) {
+        @media (max-width: 560px) {
+            @content;
+        }
+    }
+}

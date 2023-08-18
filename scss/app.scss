@@ -1,0 +1,226 @@
+@use "_mixins.scss" as *;
+@use "_reset.scss";
+
+* {
+    cursor: none;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #060018;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blob {
+    background-color: white;
+    height: 30vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(0, 255, 170), rgb(158, 109, 255));
+    animation: rotate 10s infinite;
+    opacity: 0.7;
+    filter: blur(150px);
+}
+
+.circulo {
+    &-exterior {
+        position: fixed;
+        left: 10px;
+        width: 25px;
+        height: 25px;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ffffff;
+        mix-blend-mode: difference;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: 0.1s;
+    }
+
+    &-interior {
+        position: fixed;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        mix-blend-mode: difference;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: width 0.5s, height 0.5s;
+        &.crecer {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.container {
+    @include flex(row, nowrap, space-between, start);
+    min-height: 100vh;
+    width: 100%;
+    &__header {
+        @include flex(column, nowrap, start, start);
+        position: fixed;
+        left: 12.5%;
+        width: 37.5%;
+        min-height: 100%;
+    }
+    &__main {
+        @include flex(column, nowrap, space-between, start);
+        position: absolute;
+        right: 12.5%;
+        width: 37.5%;
+    }
+}
+.div {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    &__h1 {
+        font-size: 2.9em;
+        font-weight: 700;
+        padding-bottom: 3vh;
+    }
+    &__h2 {
+        font-size: 1.3em;
+        font-weight: 500;
+        padding-left: 0.3%;
+        padding-bottom: 2.5vh;
+    }
+    &__p {
+        @include p(300, 0.6, 0.3%, 12vh);
+        font-size: 1.05em;
+    }
+}
+.header {
+    &__img {
+        &--b {
+            width: 85%;
+            opacity: 0.6;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        &--g {
+            width: 80%;
+            filter: invert(1);
+            opacity: 0.6;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        &--l {
+            width: 70%;
+            opacity: 0.6;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+    &__ul {
+        @include flex(row, nowrap, space-between, center);
+        position: absolute;
+        width: 20%;
+        gap: 1vw;
+        left: 1%;
+        bottom: 12%;
+    }
+}
+.main {
+    &__contacto {
+        @include main(relative, 12%, 10vh, 0.3%);
+        margin-top: 10vh;
+    }
+    &__p {
+        @include p(300, 0.6, 0.3%, 0vh);
+        font-size: 1.05em;
+    }
+    &__proyectos {
+        @include main(relative, 12%, 0vh, 0.3%);
+        padding-top: 10vh;
+    }
+    &__sobre--mi {
+        @include main(relative, 12%, 0vh, 0.3%);
+        margin-top: 15%;
+    }
+    &__tarjetas {
+        @include flex(column, nowrap, space-between, center);
+    }
+}
+.nav {
+    &__a {
+        @include p(500, 0.6, 0.3%, 1.5vh);
+        display: flex;
+        align-items: center;
+        font-size: 0.8em;
+        width: 30%;
+        &:before {
+            background-color: #fff;
+            content: "";
+            display: inline-block;
+            height: 0.1rem;
+            margin-right: 10px;
+            transition: all 0.42s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 0;
+        }
+        &:hover {
+            opacity: 1;
+            font-weight: 700;
+            &:before {
+                background-color: #fff;
+                width: 3rem;
+            }
+        }
+    }
+}
+
+.tarjetas {
+    &__card {
+        width: 27vw;
+        aspect-ratio: 16/9;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        border: 2px solid rgb(2, 103, 175);
+        transition: all 0.2s;
+        box-shadow: 12px 12px 2px 1px rgba(25, 131, 169, 0.5);
+        &:hover {
+            box-shadow: -12px 12px 2px -1px rgba(25, 131, 169, 0.8);
+        }
+    }
+    &__conjunto {
+        @include flex(row, nowrap, space-between, center);
+        border-radius: 5px;
+        padding: 1vw 1vw 2vw 2vw;
+        gap: 3vw;
+        margin-top: 2vh;
+        &:hover {
+            background-color: rgba(56, 89, 99, 0.25);
+        }
+    }
+    &__p {
+        @include p(300, 0.6, 0, 0);
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
