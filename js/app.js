@@ -1,15 +1,12 @@
-let circuloInterior = document.querySelector(".circulo-interior");
-let circuloExterior = document.querySelector(".circulo-exterior");
+let circulo = document.querySelector(".circulo");
 
 document.addEventListener("mousemove", moverCursor);
 
 function moverCursor(e) {
     let x = e.clientX;
     let y = e.clientY;
-    circuloInterior.style.left = `${x}px`;
-    circuloInterior.style.top = `${y}px`;
-    circuloExterior.style.left = `${x}px`;
-    circuloExterior.style.top = `${y}px`;
+    circulo.style.left = `${x}px`;
+    circulo.style.top = `${y}px`;
 }
 
 let links = Array.from(document.querySelectorAll("a"));
@@ -18,10 +15,10 @@ console.log(links);
 
 links.forEach((link) => {
     link.addEventListener("mouseover", () => {
-        circuloInterior.classList.add("crecer");
+        circulo.classList.add("crecer");
     });
     link.addEventListener("mouseleave", () => {
-        circuloInterior.classList.remove("crecer");
+        circulo.classList.remove("crecer");
     });
 });
 
