@@ -142,7 +142,7 @@ body {
         width: 20%;
         gap: 1vw;
         left: 1%;
-        bottom: 12%;
+        top: 88%;
     }
 }
 .main {
@@ -156,7 +156,7 @@ body {
     }
     &__proyectos {
         @include main(relative, 12%, 0vh, 0.3%);
-        padding-top: 10vh;
+        padding-top: 12.5vh;
     }
     &__sobre--mi {
         @include main(relative, 12%, 0vh, 0.3%);
@@ -223,4 +223,98 @@ body {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+@include device(laptop) {
+    .div {
+        &__h1 {
+            font-size: 2.8em;
+        }
+        &__h2 {
+            font-size: 1.1em;
+        }
+        &__p {
+            font-size: 0.95em;
+        }
+    }
+    .main {
+        &__p {
+            font-size: 0.95em;
+        }
+    }
+    .nav {
+        &__a {
+            font-size: 0.7em;
+        }
+    }
+    .tarjetas {
+        &__p {
+            font-size: 0.95em;
+        }
+    }
+}
+
+@include device(tablet) {
+    .div {
+        &__h1 {
+            font-size: 2.4em;
+        }
+        &__h2 {
+            font-size: 0.9em;
+        }
+        &__p {
+            font-size: 0.75em;
+        }
+    }
+    .main {
+        &__p {
+            font-size: 0.75em;
+        }
+    }
+    .nav {
+        &__a {
+            font-size: 0.6em;
+        }
+    }
+    .tarjetas {
+        &__p {
+            font-size: 0.75em;
+        }
+    }
+}
+
+@include device(movil) {
+    .div {
+        &__h1 {
+            font-size: 1.5em;
+        }
+        &__h2 {
+            font-size: 0.7em;
+        }
+        &__p {
+            font-size: 0.6em;
+        }
+    }
+    .header {
+        &__ul {
+            width: 25%;
+        }
+    }
+    .main {
+        &__p {
+            padding-left: 2vw;
+            font-size: 0.6em;
+        }
+    }
+    .nav {
+        &__a {
+            font-size: 0.45em;
+        }
+    }
+    .tarjetas {
+        &__p {
+            padding-left: 2vw;
+            font-size: 0.6em;
+        }
+    }
 }
