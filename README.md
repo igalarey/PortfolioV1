@@ -5,7 +5,7 @@
 
 ## 🔴 En vivo
 
-[Pulsa aquí](https://igalarey.github.io/portfolio/)
+[Pulsa aquí](https://portfolio-cik32p04l-igalarey.vercel.app/)
 
 ## 📋 Descripción
 
